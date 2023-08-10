@@ -14,6 +14,17 @@
 }
 
 .button {
-    width: 70px;
-    height: 30px;
+    width: 200px;
+    height: 80px;
+    border-radius: 15px;
+    margin: 2px;
+}
+
+.cash {
+    font-size: 3rem;
+    margin: 20px;
+}
+
+.cash-container {
+    text-align: center;
 }
