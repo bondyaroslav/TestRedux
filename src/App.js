@@ -1,8 +1,8 @@
 import React from "react";
 import './App.css'
 import {useDispatch, useSelector} from "react-redux";
-import {addCashAction, getCashAction} from "./store/cashReducer";
-import {addCustomerAction, removeCustomerAction} from "./store/customerReducer";
+import {addCashAction, getCashAction} from "./store/cashReducer.js";
+import {addCustomerAction, removeCustomerAction} from "./store/customersReducers.js";
 
 const App = () => {
 
@@ -18,16 +18,16 @@ const App = () => {
         dispatch(getCashAction(payload))
     }
 
-    const addCustomer = (name) => {
+    const addCustomer = (name = "adsa") => {
         const customer = {
             name,
             id: Date.now()
         }
-        dispatch(addCustomerAction({type: "ADD_CUSTOMER", payload: customer}))
+        dispatch(addCustomerAction(customer))
     }
 
-    const removeCustomer = () => {
-        dispatch(removeCustomerAction())
+    const removeCustomer = (customers) => {
+        dispatch(removeCustomerAction(customers.id))
     }
 
     return (
@@ -42,8 +42,8 @@ const App = () => {
             {customers.length > 0 ?
                 <div>
                     {customers.map(customer =>
-                        <div>{customer.name}</div>)
-                    }
+                        <div key={customer.id}>{customer.name}</div>
+                    )}
                 </div>
                 :
                 <div>

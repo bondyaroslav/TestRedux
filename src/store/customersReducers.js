@@ -5,7 +5,7 @@ const initialState = {
 const ADD_CUSTOMER = "ADD_CUSTOMER"
 const REMOVE_CUSTOMER = "REMOVE_CUSTOMER"
 
-export const customerReducer = (state = initialState, action) => {
+export const customersReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_CUSTOMER:
             return {...state, customers: [...state.customers, action.payload]}
@@ -16,5 +16,5 @@ export const customerReducer = (state = initialState, action) => {
     }
 }
 
-export const addCustomerAction = (payload) => ({type: ADD_CUSTOMER, payload: {name: "customer"}})
-export const removeCustomerAction = () => ({type: REMOVE_CUSTOMER})
+export const addCustomerAction = (payload) => ({type: ADD_CUSTOMER, payload})
+export const removeCustomerAction = (payload) => ({type: REMOVE_CUSTOMER, payload})
