@@ -28,3 +28,22 @@
 .cash-container {
     text-align: center;
 }
+
+.all-customers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.customer {
+    display: block;
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 2px;
+}
+
+.customer:hover {
+    background-color: aliceblue;
+}
